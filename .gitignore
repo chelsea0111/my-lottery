@@ -37,3 +37,11 @@ build/
 ### Mac OS ###
 .DS_Store
 /.idea/
+
+/my-lottery.iml
+/my-lottery-application.iml
+/my-lottery-common.iml
+/my-lottery-domain.iml
+/my-lottery-infrastructure.iml
+/my-lottery-interfaces.iml
+/my-lottery-rpc.iml
