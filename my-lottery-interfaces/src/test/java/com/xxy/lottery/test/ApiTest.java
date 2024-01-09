@@ -58,38 +58,4 @@ public class ApiTest {
 
         System.out.println(map);
     }
-
-    @Test
-    public void test_DrawStrategy() {
-
-        List<Map<String, String>> strategyList = new ArrayList<>();
-
-        strategyList.add(new HashMap<String, String>() {{
-            put("awardDesc", "一等奖：彩电");
-            put("awardId", "10001");
-            put("awardCount", "3");
-            put("awardRate", "20");
-        }});
-
-        strategyList.add(new HashMap<String, String>() {{
-            put("awardDesc", "二等奖：冰箱");
-            put("awardId", "10002");
-            put("awardCount", "5");
-            put("awardRate", "30");
-        }});
-
-        strategyList.add(new HashMap<String, String>() {{
-            put("awardDesc", "三等奖：洗衣机");
-            put("awardId", "10003");
-            put("awardCount", "10");
-            put("awardRate", "50");
-        }});
-
-        DrawStrategy drawStrategy = new DrawStrategy();
-        drawStrategy.initRateTuple(strategyList);
-
-        for (int i = 0; i < 20; i++) {
-            System.out.println("中奖结果：" + drawStrategy.randomDraw());
-        }
-    }
 }
