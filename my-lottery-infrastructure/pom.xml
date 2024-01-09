@@ -27,7 +27,7 @@
     </dependencies>
 
     <build>
-        <finalName>lottery-infrastructure</finalName>
+        <finalName>my-lottery-infrastructure</finalName>
         <plugins>
             <!-- 编译plugin -->
             <plugin>

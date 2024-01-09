@@ -27,7 +27,7 @@
     </dependencies>
 
     <build>
-        <finalName>lottery-rpc</finalName>
+        <finalName>my-lottery-rpc</finalName>
         <plugins>
             <!-- 编译plugin -->
             <plugin>

@@ -14,7 +14,7 @@
     <packaging>jar</packaging>
 
     <build>
-        <finalName>lottery-common</finalName>
+        <finalName>my-lottery-common</finalName>
         <plugins>
             <!-- 编译plugin -->
             <plugin>
