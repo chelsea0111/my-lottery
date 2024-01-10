@@ -8,6 +8,7 @@ import com.xxy.lottery.infrastructure.dao.IStrategyDetailDao;
 import com.xxy.lottery.infrastructure.po.Award;
 import com.xxy.lottery.infrastructure.po.Strategy;
 import com.xxy.lottery.infrastructure.po.StrategyDetail;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.List;
  * @create 2024/1/10 00:20
  * @Description
  */
+@Component
 public class StrategyRepository implements IStrategyRepository {
     @Resource
     private IStrategyDao strategyDao;
@@ -37,5 +39,19 @@ public class StrategyRepository implements IStrategyRepository {
     @Override
     public Award queryAwardInfo(String awardId) {
         return awardDao.queryAwardInfo(awardId);
+    }
+
+    @Override
+    public boolean deductStock(Long strategyId, String awardId) {
+        StrategyDetail strategyDetail = new StrategyDetail();
+        strategyDetail.setStrategyId(strategyId);
+        strategyDetail.setAwardId(awardId);
+        int count = strategyDetailDao.deductStock(strategyDetail);
+        return count == 1;
+    }
+
+    @Override
+    public List<String> queryNoStockStrategyAwardList(Long strategyId) {
+        return strategyDetailDao.queryNoStockStrategyAwardList(strategyId);
     }
 }

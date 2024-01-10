@@ -1,5 +1,7 @@
 package com.xxy.lottery.domain.strategy.model.res;
 
+import com.xxy.lottery.common.Constants;
+import com.xxy.lottery.domain.strategy.model.vo.DrawAwardInfo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,9 +19,12 @@ public class DrawResult {
     // 策略ID
     private Long strategyId;
 
-    // 奖品ID
-    private String rewardId;
+    // 中奖状态：0未中奖、1已中奖、2兜底奖 Constants.DrawState
+    private Integer drawState = Constants.DrawState.FAIL.getCode();
 
-    // 奖品名称
-    private String awardName;
+    /**
+     * 中奖奖品信息
+     */
+    private DrawAwardInfo drawAwardInfo;
+
 }

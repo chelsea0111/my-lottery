@@ -11,29 +11,29 @@ import javax.annotation.Resource;
  * @create 2024/1/10 00:49
  * @Description 抽奖支撑类 提供一些数据服务
  */
-public class DrawStrategySupport extends DrawConfig{
+public class DrawStrategySupport extends DrawConfig {
     @Resource
     protected IStrategyRepository strategyRepository;
 
     /**
+     * @param strategyId
+     * @return
      * @author xuxinyi
      * @date 2024/1/10 00:56
      * @description 查询策略配置信息
-     * @param strategyId
-     * @return
-    */
-    protected StrategyRich queryStrategyRich(Long strategyId){
+     */
+    protected StrategyRich queryStrategyRich(Long strategyId) {
         return strategyRepository.queryStrategyRich(strategyId);
     }
 
     /**
+     * @param awardId
+     * @return com.xxy.lottery.infrastructure.po.Award
      * @author xuxinyi
      * @date 2024/1/10 00:57
      * @description 查询奖品详情信息
-     * @param awardId
-     * @return com.xxy.lottery.infrastructure.po.Award
-    */
-    protected Award queryAwardInfoByAwardId(String awardId){
+     */
+    protected Award queryAwardInfoByAwardId(String awardId) {
         return strategyRepository.queryAwardInfo(awardId);
     }
 

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.security.SecureRandom;
 import java.util.List;
 
-@Component
+@Component("singleRateRandomDrawAlgorithm")
 public class SingleRateRandomDrawAlgorithm extends BaseAlgorithm {
     @Override
     public String randomDraw(Long strategyId, List<String> excludeAwardIds) {
