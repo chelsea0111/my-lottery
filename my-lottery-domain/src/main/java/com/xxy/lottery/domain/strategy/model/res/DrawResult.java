@@ -27,4 +27,9 @@ public class DrawResult {
      */
     private DrawAwardInfo drawAwardInfo;
 
+    public DrawResult(String uId, Long strategyId, Integer drawState) {
+        this.uId = uId;
+        this.strategyId = strategyId;
+        this.drawState = drawState;
+    }
 }
