@@ -22,8 +22,14 @@ public class StrategyDetail {
     // 奖品ID
     private String awardId;
 
+    // 奖品名称
+    private String awardName;
+
     // 奖品数量
     private String awardCount;
+
+    // 奖品剩余库存
+    private Integer awardSurplusCount;
 
     // 中奖概率
     private BigDecimal awardRate;
