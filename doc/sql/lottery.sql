@@ -17,7 +17,7 @@
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
--- ----------------------------
+-- -----------------------------
 -- Table structure for activity
 -- ----------------------------
 DROP TABLE IF EXISTS `activity`;
