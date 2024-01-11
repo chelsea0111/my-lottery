@@ -5,6 +5,7 @@ import com.xxy.lottery.domain.activity.model.aggregates.ActivityConfigRich;
 import com.xxy.lottery.domain.activity.model.req.ActivityConfigReq;
 import com.xxy.lottery.domain.activity.model.vo.ActivityVO;
 import com.xxy.lottery.domain.activity.model.vo.AwardVO;
+import com.xxy.lottery.domain.activity.model.vo.StrategyDetailVO;
 import com.xxy.lottery.domain.activity.model.vo.StrategyVO;
 import com.xxy.lottery.domain.activity.repository.IActivityRepository;
 import com.xxy.lottery.domain.activity.service.deploy.IActivityDeploy;
@@ -41,13 +42,18 @@ public class ActivityDeployImpl implements IActivityDeploy {
             activityRepository.addStrategy(strategy);
 
             // 添加策略明细配置
+            List<StrategyDetailVO> strategyDetailList = activityConfigRich.getStrategy().getStrategyDetailList();
+            activityRepository.addStrategyDetailList(strategyDetailList);
 
-
+            logger.info("创建活动配置完成，activityId：{}", req.getActivityId());
         } catch (Exception e) {
             logger.error("创建活动配置失败，唯一索引冲突 activityId：{} reqJson：{}", req.getActivityId(), JSON.toJSONString(req), e);
             throw e;
         }
+    }
 
-
+    @Override
+    public void updateActivity(ActivityConfigReq req) {
+        // TODO: 非核心功能后续补充
     }
 }

@@ -18,4 +18,6 @@ public interface IStrategyDetailDao {
     int deductStock(StrategyDetail strategyDetail);
 
     List<String> queryNoStockStrategyAwardList(Long strategyId);
+
+    void insertList(List<StrategyDetail> req);
 }
