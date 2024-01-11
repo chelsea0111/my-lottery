@@ -26,6 +26,9 @@ public class Constants {
 
     }
 
+    /*
+    抽奖策略模式：总体概率、单项概率
+     */
     public enum StrategyMode {
 
         /**
@@ -107,6 +110,9 @@ public class Constants {
         }
     }
 
+    /*
+    发奖状态：0等待发奖、1发奖成功、2发奖失败
+     */
     public enum AwardState {
 
         /**
@@ -149,6 +155,9 @@ public class Constants {
         }
     }
 
+    /*
+    奖品类型（1:文字描述、2:兑换码、3:优惠券、4:实物奖品）
+     */
     public enum AwardType {
         /**
          * 文字描述
@@ -192,4 +201,52 @@ public class Constants {
         }
     }
 
+    /**
+     * @author xuxinyi
+     * @date 2024/1/12 00:25
+     * @description 活动状态：1编辑、2提审、3撤审、4通过、5运行(审核通过后worker扫描状态)、6拒绝、7关闭、8开启
+    */
+    public enum ActivityState {
+
+        /** 1：编辑 */
+        EDIT(1, "编辑"),
+        /** 2：提审 */
+        ARRAIGNMENT(2, "提审"),
+        /** 3：撤审 */
+        REVOKE(3, "撤审"),
+        /** 4：通过 */
+        PASS(4, "通过"),
+        /** 5：运行(活动中) */
+        DOING(5, "运行(活动中)"),
+        /** 6：拒绝 */
+        REFUSE(6, "拒绝"),
+        /** 7：关闭 */
+        CLOSE(7, "关闭"),
+        /** 8：开启 */
+        OPEN(8, "开启");
+
+        private Integer code;
+        private String info;
+
+        ActivityState(Integer code, String info) {
+            this.code = code;
+            this.info = info;
+        }
+
+        public Integer getCode() {
+            return code;
+        }
+
+        public void setCode(Integer code) {
+            this.code = code;
+        }
+
+        public String getInfo() {
+            return info;
+        }
+
+        public void setInfo(String info) {
+            this.info = info;
+        }
+    }
 }
