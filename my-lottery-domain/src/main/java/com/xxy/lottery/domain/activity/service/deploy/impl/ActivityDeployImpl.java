@@ -11,11 +11,13 @@ import com.xxy.lottery.domain.activity.repository.IActivityRepository;
 import com.xxy.lottery.domain.activity.service.deploy.IActivityDeploy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+@Service
 public class ActivityDeployImpl implements IActivityDeploy {
     private Logger logger = LoggerFactory.getLogger(ActivityDeployImpl.class);
 

@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 /**
  * @Author xuxinyi
  * @create 2024/1/11 22:04
@@ -37,4 +39,9 @@ public class StrategyDetailVO {
      * 奖品剩余库存
      */
     private Integer awardSurplusCount;
+
+    /**
+     * 中奖概率
+     */
+    private BigDecimal awardRate;
 }

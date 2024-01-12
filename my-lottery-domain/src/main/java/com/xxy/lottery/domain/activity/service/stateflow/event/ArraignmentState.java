@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 提审状态
+ * @author xxy
  */
 @Component
 public class ArraignmentState extends AbstractState {
