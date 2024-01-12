@@ -13,7 +13,7 @@ import javax.annotation.Resource;
  */
 public abstract class AbstractState {
     @Resource
-    private IActivityRepository activityRepository;
+    protected IActivityRepository activityRepository;
 
     /**
      * 活动提审
