@@ -1,5 +1,6 @@
 package com.xxy.lottery.domain.activity.repository;
 
+import com.xxy.lottery.common.Constants;
 import com.xxy.lottery.domain.activity.model.vo.ActivityVO;
 import com.xxy.lottery.domain.activity.model.vo.AwardVO;
 import com.xxy.lottery.domain.activity.model.vo.StrategyDetailVO;
@@ -35,4 +36,13 @@ public interface IActivityRepository {
      * @description 添加策略明细配置
      */
     void addStrategyDetailList(List<StrategyDetailVO> strategyDetailList);
+
+    /**
+     * 活动状态变更
+     * @param activityId
+     * @param beforeState 修改前状态
+     * @param afterState 修改后状态
+     * @return 更新结果
+     */
+    boolean alterStatus(Long activityId, Enum<Constants.ActivityState> beforeState, Enum<Constants.ActivityState> afterState);
 }

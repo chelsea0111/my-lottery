@@ -1,5 +1,6 @@
 package com.xxy.lottery.infrastructure.dao;
 
+import com.xxy.lottery.domain.strategy.model.vo.AwardBriefVO;
 import com.xxy.lottery.infrastructure.po.Award;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

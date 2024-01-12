@@ -1,8 +1,8 @@
 package com.xxy.lottery.domain.strategy.service.draw;
 
 import com.xxy.lottery.domain.strategy.model.aggregates.StrategyRich;
+import com.xxy.lottery.domain.strategy.model.vo.AwardBriefVO;
 import com.xxy.lottery.domain.strategy.repository.IStrategyRepository;
-import com.xxy.lottery.infrastructure.po.Award;
 
 import javax.annotation.Resource;
 
@@ -33,7 +33,7 @@ public class DrawStrategySupport extends DrawConfig {
      * @date 2024/1/10 00:57
      * @description 查询奖品详情信息
      */
-    protected Award queryAwardInfoByAwardId(String awardId) {
+    protected AwardBriefVO queryAwardInfoByAwardId(String awardId) {
         return strategyRepository.queryAwardInfo(awardId);
     }
 

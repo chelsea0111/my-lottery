@@ -2,13 +2,19 @@ package com.xxy.lottery.domain.activity.service.stateflow;
 
 import com.xxy.lottery.common.Constants;
 import com.xxy.lottery.common.Result;
+import com.xxy.lottery.domain.activity.repository.IActivityRepository;
+
+import javax.annotation.Resource;
 
 /**
  * @Author xuxinyi
  * @create 2024/1/12 00:22
- * @Description 活动状态抽象类
+ * @Description 活动状态抽象类，定义各种状态之间流转的方法
  */
 public abstract class AbstractState {
+    @Resource
+    private IActivityRepository activityRepository;
+
     /**
      * 活动提审
      *

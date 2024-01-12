@@ -1,9 +1,7 @@
 package com.xxy.lottery.infrastructure.repository;
 
-import com.xxy.lottery.domain.activity.model.vo.ActivityVO;
-import com.xxy.lottery.domain.activity.model.vo.AwardVO;
-import com.xxy.lottery.domain.activity.model.vo.StrategyDetailVO;
-import com.xxy.lottery.domain.activity.model.vo.StrategyVO;
+import com.xxy.lottery.common.Constants;
+import com.xxy.lottery.domain.activity.model.vo.*;
 import com.xxy.lottery.domain.activity.repository.IActivityRepository;
 import com.xxy.lottery.infrastructure.dao.IActivityDao;
 import com.xxy.lottery.infrastructure.dao.IAwardDao;
@@ -68,5 +66,14 @@ public class ActivityRepository implements IActivityRepository {
             req.add(strategyDetail);
         }
         strategyDetailDao.insertList(req);
+    }
+
+    @Override
+    public boolean alterStatus(Long activityId, Enum<Constants.ActivityState> beforeState, Enum<Constants.ActivityState> afterState) {
+        AlterStateVO alterStateVO = new AlterStateVO(activityId,
+                ((Constants.ActivityState) beforeState).getCode()
+                , ((Constants.ActivityState) afterState).getCode());
+        int count = activityDao.alterState(alterStateVO);
+        return 1 == count;
     }
 }
