@@ -1,6 +1,8 @@
 package com.xxy.lottery.test.domain;
 
+import com.alibaba.fastjson.JSON;
 import com.xxy.lottery.common.Constants;
+import com.xxy.lottery.common.Result;
 import com.xxy.lottery.domain.activity.model.aggregates.ActivityConfigRich;
 import com.xxy.lottery.domain.activity.model.req.ActivityConfigReq;
 import com.xxy.lottery.domain.activity.model.vo.ActivityVO;
@@ -8,6 +10,7 @@ import com.xxy.lottery.domain.activity.model.vo.AwardVO;
 import com.xxy.lottery.domain.activity.model.vo.StrategyDetailVO;
 import com.xxy.lottery.domain.activity.model.vo.StrategyVO;
 import com.xxy.lottery.domain.activity.service.deploy.IActivityDeploy;
+import com.xxy.lottery.domain.activity.service.stateflow.IStateHandler;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,6 +32,9 @@ public class ActivityTest {
 
     @Resource
     private IActivityDeploy activityDeploy;
+
+    @Resource
+    private IStateHandler stateHandler;
 
     private ActivityConfigRich activityConfigRich;
 
@@ -152,5 +158,13 @@ public class ActivityTest {
     @Test
     public void test_createActivity() {
         activityDeploy.createActivity(new ActivityConfigReq(activityId, activityConfigRich));
+    }
+
+    @Test
+    public void test_alterState() {
+//        logger.info("提交审核:{}",JSON.toJSONString(stateHandler.arraignment(120981321L, Constants.ActivityState.EDIT)));
+//        logger.info("审核通过:{}",JSON.toJSONString(stateHandler.checkPass(120981321L, Constants.ActivityState.ARRAIGNMENT)));
+//        logger.info("运行活动:{}",JSON.toJSONString(stateHandler.doing(120981321L, Constants.ActivityState.PASS)));
+        logger.info("二次提交审核:{}", JSON.toJSONString(stateHandler.arraignment(120981321L, Constants.ActivityState.EDIT)));
     }
 }
