@@ -1,4 +1,4 @@
-package com.xxy.lottery.domain.activity.service.stateflow.impl;
+package com.xxy.lottery.domain.activity.service.stateflow.event;
 
 import com.xxy.lottery.common.Constants;
 import com.xxy.lottery.common.Result;
