@@ -1,12 +1,18 @@
-package com.xxy.lottery.domain.support.ids.impl;
+package com.xxy.lottery.domain.support.ids.policy;
 
 import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.net.NetUtil;
 import cn.hutool.core.util.IdUtil;
 import com.xxy.lottery.domain.support.ids.IIdGenerator;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
+/**
+ * 雪花算法，长码，大量
+ * hutool 工具包下的雪花算法，15位雪花算法推荐：https://github.com/yitter/idgenerator/blob/master/Java/source/src/main/java/com/github/yitter/core/SnowWorkerM1.java
+ */
+@Component
 public class SnowFlake implements IIdGenerator {
     private Snowflake snowflake;
 

@@ -4,9 +4,9 @@ public class Constants {
 
     public enum ResponseCode {
         SUCCESS("0000", "成功"),
-        UN_ERROR("0001","未知失败"),
-        ILLEGAL_PARAMETER("0002","非法参数"),
-        INDEX_DUP("0003","主键冲突");
+        UN_ERROR("0001", "未知失败"),
+        ILLEGAL_PARAMETER("0002", "非法参数"),
+        INDEX_DUP("0003", "主键冲突");
 
         private String code;
         private String info;
@@ -73,7 +73,7 @@ public class Constants {
         /**
          * 未中奖
          */
-        FAIL(0,"未中奖"),
+        FAIL(0, "未中奖"),
 
         /**
          * 已中奖
@@ -83,7 +83,7 @@ public class Constants {
         /**
          * 兜底奖
          */
-        Cover(2,"兜底奖");
+        Cover(2, "兜底奖");
 
         private Integer code;
         private String info;
@@ -205,24 +205,40 @@ public class Constants {
      * @author xuxinyi
      * @date 2024/1/12 00:25
      * @description 活动状态：1编辑、2提审、3撤审、4通过、5运行(审核通过后worker扫描状态)、6拒绝、7关闭、8开启
-    */
+     */
     public enum ActivityState {
 
-        /** 1：编辑 */
+        /**
+         * 1：编辑
+         */
         EDIT(1, "编辑"),
-        /** 2：提审 */
+        /**
+         * 2：提审
+         */
         ARRAIGNMENT(2, "提审"),
-        /** 3：撤审 */
+        /**
+         * 3：撤审
+         */
         REVOKE(3, "撤审"),
-        /** 4：通过 */
+        /**
+         * 4：通过
+         */
         PASS(4, "通过"),
-        /** 5：运行(活动中) */
+        /**
+         * 5：运行(活动中)
+         */
         DOING(5, "运行(活动中)"),
-        /** 6：拒绝 */
+        /**
+         * 6：拒绝
+         */
         REFUSE(6, "拒绝"),
-        /** 7：关闭 */
+        /**
+         * 7：关闭
+         */
         CLOSE(7, "关闭"),
-        /** 8：开启 */
+        /**
+         * 8：开启
+         */
         OPEN(8, "开启");
 
         private Integer code;
@@ -248,5 +264,23 @@ public class Constants {
         public void setInfo(String info) {
             this.info = info;
         }
+    }
+
+    /**
+     * Ids 生成策略枚举
+     */
+    public enum Ids {
+        /**
+         * 雪花算法
+         */
+        SnowFlake,
+        /**
+         * 日期算法
+         */
+        ShortCode,
+        /**
+         * 随机算法
+         */
+        RandomNumeric;
     }
 }
